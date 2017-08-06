@@ -20,14 +20,7 @@
 # please give credit to SethBling.
 # http://youtube.com/SethBling
 
-from pymclevel import TAG_Compound
-from pymclevel import TAG_Int
-from pymclevel import TAG_Short
-from pymclevel import TAG_Byte
-from pymclevel import TAG_String
-from pymclevel import TAG_Float
-from pymclevel import TAG_Double
-from pymclevel import TAG_List
+from pymclevel import TAG_Compound, TAG_Int, TAG_Short, TAG_Byte, TAG_String, TAG_Float, TAG_List
 
 VERSION = 1.0
 
@@ -46,38 +39,38 @@ Professions = {
 	"Leather Worker (white apron - 4)": 11,
 	"Detect Wool":12
 	}
-print(Professions)
+
 professionsLookup = {
-					0:"farmer",
-					1:"fisherman",
-					2:"shepherd",
-					3:"fletcher",
-					4:"librarian",
-					5:"cartographer",
-					6:"cleric",
-					7:"armorer",
-					8:"weaponsmith",
-					9:"toolsmith",
-					10:"butcher",
-					11:"leatherworker",
-					12:"detect"
-									}
+	0:"farmer",
+	1:"fisherman",
+	2:"shepherd",
+	3:"fletcher",
+	4:"librarian",
+	5:"cartographer",
+	6:"cleric",
+	7:"armorer",
+	8:"weaponsmith",
+	9:"toolsmith",
+	10:"butcher",
+	11:"leatherworker",
+	12:"detect"
+	}
 
 variantLookup = {
-				0:0,
-				1:0,
-				2:0,
-				3:0,
-				4:1,
-				5:1,
-				6:2,
-				7:3,
-				8:3,
-				9:3,
-				10:4,
-				11:4,
-				12:5
-						}
+	0:0,
+	1:0,
+	2:0,
+	3:0,
+	4:1,
+	5:1,
+	6:2,
+	7:3,
+	8:3,
+	9:3,
+	10:4,
+	11:4,
+	12:5
+}
 	
 ProfessionKeys = ()
 for key in Professions.keys():
@@ -126,26 +119,24 @@ def perform(level, box, options):
 	customName = options["Custom Name"]
 	customNameVisible = options["Custom Name Visible"]	
 	
-	for x in range(box.minx, box.maxx):
-		for y in range(box.miny, box.maxy):
-			for z in range(box.minz, box.maxz):
-				if level.blockAt(x, y, z) == 54:
-					dontConvert = 1
-					if Professions[options["Profession"]] == 12:
-						if level.blockAt(x, y+1, z) == 35:					
-							bdata = level.blockDataAt(x,y+1,z)
-							if bdata < 12:
-								variant = int(variantLookup[bdata])
-								professionGUI = professionsLookup[bdata]
-								dontConvert = 0
-							level.setBlockAt(x, y+1, z, 0)
-						else:
-							dontConvert = 1						
-					else:
-						variant = int(variantLookup[Professions[options["Profession"]]])
-						professionGUI = professionsLookup[Professions[options["Profession"]]]
-					if dontConvert == 0:
-						createShop(level, x, y, z, stopTrade, variant, unlimited, customName, customNameVisible, maxHealth, professionGUI, rewardXP)
+	for (x, y, z) in box.positions:
+		if level.blockAt(x, y, z) == 54:
+			dontConvert = 1
+			if Professions[options["Profession"]] == 12:
+				if level.blockAt(x, y+1, z) == 35:					
+					bdata = level.blockDataAt(x,y+1,z)
+					if bdata < 12:
+						variant = int(variantLookup[bdata])
+						professionGUI = professionsLookup[bdata]
+						dontConvert = 0
+					level.setBlockAt(x, y+1, z, 0)
+				else:
+					dontConvert = 1						
+			else:
+				variant = int(variantLookup[Professions[options["Profession"]]])
+				professionGUI = professionsLookup[Professions[options["Profession"]]]
+			if dontConvert == 0:
+				createShop(level, x, y, z, stopTrade, variant, unlimited, customName, customNameVisible, maxHealth, professionGUI, rewardXP)
 
 def createShop(level, x, y, z, stopTrade, variant, unlimited, customName, customNameVisible, maxHealth, professionGUI, rewardXP):
 	chest = level.tileEntityAt(x, y, z)
@@ -184,7 +175,7 @@ def createShop(level, x, y, z, stopTrade, variant, unlimited, customName, custom
 	villager["AttackTime"] = TAG_Short(0)
 	villager["BodyRot"] = TAG_Float(-132.68496704101562)
 	villager["ChestItems"] = TAG_List()
-	for i in range(0,7):
+	for i in range(7):
 		chestData = TAG_Compound()
 		chestData["Count"] = TAG_Byte(0)
 		chestData["Damage"] = TAG_Short(0)
