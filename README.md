@@ -4,7 +4,7 @@ CreateShops PE is based off the original [CreateShops](https://www.youtube.com/w
 Modified and updated by [Pathway Studios](http://pathway.studio) for PE 1.0+  
 Follow us [@pathwaymc](https://twitter.com/@pathwaymc) on Twitter
 
-# Screen Shots
+# Screenshots
 Trades Screen  
 ![Trade Screen](https://user-images.githubusercontent.com/1608235/29000334-5e3f89ae-7a35-11e7-9420-ffa3a1fee980.png "Trade Screen")
 
@@ -14,11 +14,11 @@ Help Screen
 # How to use
 
 ## Chest Setup
-To prepare a chest to be converted into a villager you'll need to place the items in a specific format.
+To prepare a chest to be converted into a villager, you'll need to place the items in a specific format.
 
-* The first row of the chest is the BuyA
-* The second row of the chest is the BuyB (this is optional)
-* The third row of the chest is the Sell
+* The first row of the chest is BuyA
+* The second row of the chest is BuyB (this is optional)
+* The third row of the chest is Sell
 
 Each column represents a different trade. 
 
@@ -30,21 +30,21 @@ In the following example the chest is setup to give the villager two trades.
 ![Chest Setup Example](https://user-images.githubusercontent.com/1608235/29000338-6a49d72c-7a35-11e7-97cc-257aff4e970f.png "Chest Setup Example")
 
 ## Custom Name & Custom Name Visible
-This will set each villager created within the selection to this name and make it visible when the player looks at the villager
+This will set each villager created within the selection to this name and make it visible when a player looks at the villager.
 
-This will **not** always display the villagers name, you'll need to modify your behavior pack in order to do that.
+This will **not** always display the villagers name; you'll need to modify your behavior pack in order to do that.
 
-*Please note: This applies to **every** villager created within your selection. That means if you add the name Sally and select multiple chests, they will all be named Sally*
+*Please note: This applies to **every** villager created within your selection. That means if you add the name Sally and select multiple chests, all resulting villagers will be named Sally*
 
 ## Reward XP
-This is the amount of XP given for each trade a player makes
+This is the amount of XP given for each trade a player makes.
 
 ## Professions
-The Professions option, while having multiple selections, really has two modes. Either Detect Wool or set a specific profession. 
+Though the Professions menu has multiple options, it really has two modes: Detect wool or set a specific profession. 
 
 If you select a specific profession, **ALL** chests within your selection will turn into a villager using the profession you specified.
 
-If you select Detect Blocks, only chests with one of the following specific wool types placed directly above it will be converted into the respective villager profession.
+If you select Detect Wool, only chests with one of the following wool types placed directly above it will be converted into its associated villager profession.
 
 * White -> Farmer
 * Orange -> Fisherman
@@ -60,7 +60,7 @@ If you select Detect Blocks, only chests with one of the following specific wool
 * Blue -> Leather Worker
 
 ## Stop Trade Upgrade
-This makes it so the villager's trade tier won't be upgraded and start adding trades from the respective villager's trade loot table. This sets the TradeTier to -2000000000 meaning they would have to make 2 billion trades (most villagers 2 billion +1) before they pull from their loot tables. This means realistically, loot tables for the applicable villager or villager variant will not effect villagers created by this filter
+This makes it so the villager's trade tier won't be upgraded and start adding trades from the respective villager's trade loot table. This sets the TradeTier to -2000000000, meaning a player would have to make 2 billion trades (most villagers 2 billion +1) before they pull from their loot tables. This means realistically, loot tables for the applicable villager or villager variant will not affect villagers created by this filter.
 
 Alternatively, you could set the villager's (or villager variant's) loot table to an empty file within your behavior packs if you want more control.
 
@@ -68,4 +68,4 @@ Alternatively, you could set the villager's (or villager variant's) loot table t
 This sets the health of a villager to 1024. If you want to make sure your villager can't be killed, setup a damage\_sensor in their behvaior pack to negate the type of damage you want to protect them from.
 
 ## Unlimited Trades
-This makes your trades unlimited (effectively at least. It's about 2 billion trades)
+This makes your trades unlimited (effectively at least — it's about 2 billion trades).
