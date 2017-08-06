@@ -1,7 +1,7 @@
 # Create Shops PE
 CreateShops PE is based off the original [CreateShops](https://www.youtube.com/watch?v=dMDnbyFDvXQ) filter by [SethBling](https://www.youtube.com/channel/UC8aG3LDTDwNR1UQhSn9uVrw)
 
-Modified and updated by [Pathway Studios](http://pathway.studio) for PE 1.0+
+Modified and updated by [Pathway Studios](http://pathway.studio) for PE 1.0+  
 Follow us [@pathwaymc](https://twitter.com/@pathwaymc) on Twitter
 
 # Screen Shots
