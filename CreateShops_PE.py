@@ -99,7 +99,7 @@ inputs = [(("Trade", "title"),
 		"	Middle Row: Buy B (optional)\n"
 		"	Bottom Row: Sell\n"
 		"*Each column is a different trade*\n\n"
-		"In order to use Detect Block, you must place a wool block over the chest\n"
+		"In order to use Detect Wool, you must place a wool block over the chest\n"
 		"Below are the assignments:\n"
 		"	White -> Farmer\n"
 		"	Orange -> Fisherman\n"
